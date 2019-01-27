@@ -1,6 +1,6 @@
 var express = require('express')
 var body = require('body-parser')
-var port = 8080
+var port = process.env.PORT || 5000;
 
 var app= express()
 var allowCrossDomain = function(req, res, next) {
@@ -97,9 +97,9 @@ app.post('/api',(req,res)=>{
     
 })
 
-app.listen(port , ()=>{
-    console.log("Sever running :"+port)
-})
+app.listen(port, () => {
+    console.log("application is listening on:", port);
+ });
 
 //{"type":"asd","conut":"asd"}
 //{"type":"qwe","conut":"qwe"}
